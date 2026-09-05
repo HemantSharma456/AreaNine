@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 // Pages/Sections
 import Hero from "./pages/Hero";
 import Projects from "./pages/Projects";
+import ArchitecturalBanner from "./components/ArchitecturalBanner";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Services from "./pages/Services";
@@ -81,6 +82,9 @@ function App() {
 
         {/* 2. Projects */}
         <Projects />
+
+        {/* Architectural Visual Interlude */}
+        <ArchitecturalBanner />
 
         {/* 3. About */}
         <About />

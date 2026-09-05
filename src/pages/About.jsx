@@ -4,6 +4,7 @@
 
 import React from "react";
 import { teamMembers, awards, siteConfig } from "../data/siteData";
+import studioImg from "../assets/images/hero3.jpg";
 import PlaceholderImage from "../components/PlaceholderImage";
 import SectionHeader from "../components/SectionHeader";
 import { useScrollAnimation } from "../hooks/useHooks";
@@ -111,7 +112,7 @@ const About = () => {
 
           <div className="about__story-image-wrap reveal">
             <PlaceholderImage
-              src="/assets/images/about-studio.jpg"
+              src={studioImg}
               alt="AreaNine Studio Environment"
               objectFit="cover"
               aspectRatio="4/5"
