@@ -1,0 +1,304 @@
+/* =============================================
+   AREANINE — Global Styles & Architectural Design System
+   ============================================= */
+
+/* CSS Variables — Design Tokens */
+:root {
+  /* Colors — Pure Monochrome Architectural Palette */
+  --color-black: #080808;
+  --color-off-black: #0d0d0d;
+  --color-charcoal: #141414;
+  --color-dark-grey: #1f1f1f;
+  --color-mid-grey: #666666;
+  --color-light-grey: #9a9a9a;
+  --color-silver: #d1d1d1;
+  --color-off-white: #f5f4f0;
+  --color-white: #ffffff;
+  --color-accent: #ffffff;
+  --color-accent-muted: rgba(255, 255, 255, 0.7);
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing System */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1.25rem;
+  --space-md: 2.25rem;
+  --space-lg: 4.5rem;
+  --space-xl: 7.5rem;
+  --space-2xl: 11rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Borders & Rules */
+  --border-thin: 1px solid rgba(255, 255, 255, 0.08);
+  --border-accent: 1px solid var(--color-accent);
+
+  /* Shadows */
+  --shadow-card: 0 16px 48px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 24px 64px rgba(0, 0, 0, 0.55);
+
+  /* Layout */
+  --container-max: 1360px;
+  --container-padding: 2.5rem;
+}
+
+/* Light mode variables */
+[data-theme="light"] {
+  --bg-primary: #f7f6f2;
+  --bg-secondary: #ece9e2;
+  --bg-card: #ffffff;
+  --bg-overlay: rgba(247, 246, 242, 0.94);
+  --text-primary: #121212;
+  --text-secondary: #5a5a5a;
+  --text-muted: #8e8e8e;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-subtle: rgba(0, 0, 0, 0.04);
+  --nav-bg: rgba(247, 246, 242, 0.88);
+  --card-border: rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 10px 35px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.08);
+  --cta-bg: #121212;
+  --cta-text: #f7f6f2;
+  --btn-primary-bg: #121212;
+  --btn-primary-text: #ffffff;
+  --btn-primary-border: #121212;
+}
+
+/* Dark mode variables (default) */
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #131313;
+  --bg-card: #181818;
+  --bg-overlay: rgba(10, 10, 10, 0.95);
+  --text-primary: #f5f4f0;
+  --text-secondary: #999999;
+  --text-muted: #666666;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+  --nav-bg: rgba(10, 10, 10, 0.85);
+  --card-border: rgba(255, 255, 255, 0.07);
+  --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.8);
+  --cta-bg: #f5f4f0;
+  --cta-text: #0a0a0a;
+  --btn-primary-bg: #f5f4f0;
+  --btn-primary-text: #0a0a0a;
+  --btn-primary-border: #f5f4f0;
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.65;
+  transition: background-color var(--transition-base), color var(--transition-base);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 1px solid var(--text-primary);
+  outline-offset: 3px;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* =============================================
+   TYPOGRAPHY UTILITIES
+   ============================================= */
+
+.display-text {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+}
+
+.heading-text {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.label-text {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* =============================================
+   LAYOUT UTILITIES
+   ============================================= */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+/* Hairline rule */
+.hairline {
+  height: 1px;
+  background: var(--border-color);
+  width: 100%;
+}
+
+/* =============================================
+   SCROLLBAR & SELECTION
+   ============================================= */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  opacity: 0.4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+::selection {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.25; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =============================================
+   RESPONSIVE BASE
+   ============================================= */
+
+@media (max-width: 1024px) {
+  :root {
+    --space-xl: 6rem;
+    --space-lg: 3.5rem;
+    --container-padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 4.5rem;
+    --space-lg: 2.75rem;
+    --container-padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-xl: 3.75rem;
+    --space-lg: 2.25rem;
+    --container-padding: 1.25rem;
+  }
+}

@@ -1,0 +1,18 @@
+/* =============================================
+   App.css — App-level styles
+   ============================================= */
+
+.app {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Ensure main sections have correct backgrounds */
+main {
+  position: relative;
+}
+
+/* Page transitions (optional smooth section changes) */
+section {
+  transition: background-color 0.4s ease;
+}

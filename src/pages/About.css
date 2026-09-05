@@ -1,0 +1,300 @@
+/* =============================================
+   About Section Styles — Studio Heritage & Practice
+   ============================================= */
+
+.about {
+  background: var(--bg-primary);
+}
+
+/* ---- Story Block ---- */
+.about__story {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 5.5rem;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.about__story-text .section-header {
+  margin-bottom: 2rem;
+}
+
+.about__story-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about__lead {
+  font-size: 1.12rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.about__story-body p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.about__story-image-wrap {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
+}
+
+.about__story-caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.6rem 1rem;
+  border-left: 2px solid var(--text-primary);
+}
+
+/* ---- Values / Manifesto ---- */
+.about__values-wrap {
+  margin-bottom: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.about__values-header {
+  margin-bottom: 3rem;
+}
+
+.about__values-heading {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.about__values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about__value-card {
+  background: var(--bg-card);
+  border: 1px solid var(--card-border);
+  padding: 3rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.about__value-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--text-muted);
+  box-shadow: var(--shadow-card);
+}
+
+.about__value-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about__value-num {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--text-muted);
+}
+
+.about__value-title {
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.about__value-body {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* ---- Team (3 Principals) ---- */
+.about__team {
+  margin-bottom: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.team-card__image-frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+}
+
+.team-card__image-frame .placeholder-img-wrapper {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-card:hover .team-card__image-frame .placeholder-img-wrapper {
+  transform: scale(1.04);
+}
+
+.team-card__image-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--border-color);
+}
+
+.team-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.team-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.team-card__name {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.team-card__role {
+  color: var(--text-muted);
+}
+
+.team-card__bio {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ---- Awards ---- */
+.about__awards {
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.awards__list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-color);
+}
+
+.award-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-fast), padding-left var(--transition-base);
+  cursor: default;
+}
+
+.award-row:hover {
+  background: var(--bg-secondary);
+  padding-left: 1.5rem;
+}
+
+.award-row__year {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  min-width: 60px;
+}
+
+.award-row__line {
+  width: 36px;
+  height: 1px;
+  background: var(--border-color);
+  flex-shrink: 0;
+}
+
+.award-row__content {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex: 1;
+  gap: 2rem;
+}
+
+.award-row__name {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.award-row__project {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about__story {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .about__values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .team__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about__value-card {
+    padding: 2.25rem 1.5rem;
+  }
+
+  .award-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .award-row__line {
+    display: none;
+  }
+
+  .award-row__content {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+
