@@ -1,7 +1,7 @@
 // =============================================
 // ArchitecturalBanner Component
 // Editorial visual bridge between website sections
-// Features hero.jpg with architectural quote & atmosphere
+// Clean split layout: unblocked team portrait + spatial philosophy
 // =============================================
 
 import React from "react";
@@ -10,39 +10,48 @@ import "./ArchitecturalBanner.css";
 
 const ArchitecturalBanner = () => {
   return (
-    <aside className="arch-banner" aria-label="Architectural Philosophy Statement">
-      {/* Background Media with Atmospheric Vignette */}
-      <div className="arch-banner__media" aria-hidden="true">
-        <img
-          src={heroImg}
-          alt="AreaNine Architectural Space"
-          className="arch-banner__img"
-        />
-        <div className="arch-banner__gradient" />
-        <div className="arch-banner__vignette" />
-      </div>
-
-      {/* Editorial Content */}
+    <section className="arch-banner" aria-label="Architectural Philosophy Statement">
       <div className="container arch-banner__container">
-        <div className="arch-banner__content">
-          <div className="arch-banner__tag">
-            <span className="arch-banner__line" />
-            <span className="label-text">Spatial Philosophy</span>
-            <span className="arch-banner__line" />
+        <div className="arch-banner__grid">
+          {/* Left Column: Spatial Philosophy Editorial */}
+          <div className="arch-banner__editorial">
+            <div className="arch-banner__tag">
+              <span className="arch-banner__line" />
+              <span className="label-text">Spatial Philosophy</span>
+            </div>
+
+            <blockquote className="arch-banner__quote display-text">
+              "Architecture is the learned game, correct and magnificent, of forms assembled in the light."
+            </blockquote>
+
+            <div className="arch-banner__meta">
+              <span className="arch-banner__cite">Le Corbusier</span>
+              <span className="arch-banner__separator">/</span>
+              <span className="arch-banner__studio">AreaNine Practice Monograph</span>
+            </div>
+
+            <div className="arch-banner__note">
+              <span className="arch-banner__location-dot" />
+              <span>Studio Practice · Panipat, Haryana</span>
+            </div>
           </div>
 
-          <blockquote className="arch-banner__quote display-text">
-            "Architecture is the learned game, correct and magnificent, of forms assembled in the light."
-          </blockquote>
-
-          <div className="arch-banner__meta">
-            <span className="arch-banner__cite">Le Corbusier</span>
-            <span className="arch-banner__separator">/</span>
-            <span className="arch-banner__studio">AreaNine Practice Monograph · Panipat, Haryana</span>
+          {/* Right Column: Pristine, Uncluttered Team Photo */}
+          <div className="arch-banner__frame">
+            <div className="arch-banner__image-wrap">
+              <img
+                src={heroImg}
+                alt="AreaNine Architecture Studio Team in Panipat, Haryana"
+                className="arch-banner__img"
+              />
+              <div className="arch-banner__frame-badge">
+                <span className="label-text">AreaNine Studio Team</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </aside>
+    </section>
   );
 };
 
